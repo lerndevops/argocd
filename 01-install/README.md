@@ -83,7 +83,8 @@ ex: http://34.136.5.35:31738
 use the credential as configured above 
 
 default-user: admin
-password: as configured  
+password: as configured 
 ```
+![argo-cd-login-page](../img/argo-cd-login-page.png)
 
 
