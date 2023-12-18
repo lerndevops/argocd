@@ -116,3 +116,14 @@ stringData:
        }
     }
 ```
+
+### validate 
+```sh
+argocd cluster list
+```
+```sh
+devops@kube-master:~$ argocd cluster list
+SERVER                          NAME          VERSION  STATUS   MESSAGE                                                  PROJECT
+https://10.128.0.7:6443         stag-cluster           Unknown
+https://kubernetes.default.svc  in-cluster             Unknown  Cluster has no applications and is not being monitored.
+```
