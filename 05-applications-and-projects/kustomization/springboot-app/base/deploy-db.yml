@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-app-mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spmdb
+  template:
+    metadata:
+      labels:
+        app: spmdb
+    spec:
+      containers:
+       - image: lerndevops/samples:mongodb
+         name: mongo

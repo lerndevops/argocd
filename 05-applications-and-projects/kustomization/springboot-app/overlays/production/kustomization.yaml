@@ -1,0 +1,16 @@
+bases:
+  - ../../base
+namespace: prod
+#patches:
+#  - replica_count.yaml
+#  - resource_limits.yml
+#  - devdbconf.yml
+configMapGenerator:
+  - name: spring-app-xyz-config
+    files:
+     - configs/app.json
+patchesStrategicMerge:
+  - env.yml
+  - replica_count.yaml
+  - dbconf.yml
+  - namespace.yml
