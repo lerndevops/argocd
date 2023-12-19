@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-sampleapp
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: sampleapp
+  template:
+    metadata:
+      labels:
+        app: sampleapp
+    spec:
+      containers:
+      - name: sampleapp
+        image: lerndevops/samples:java-app
+        ports:
+        - containerPort: 8080
+        resources:
+          limits: 
+            cpu: 50m
