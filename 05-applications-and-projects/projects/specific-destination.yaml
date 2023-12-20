@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1  
+kind: AppProject
+metadata:
+  name: specific-dest-prj
+  namespace: argocd
+spec:
+  description: project description
+  sourceRepos:
+    - “*”
+  destinations: # Only permit applications to deploy to the ns-1 namespace in the same cluster
+   - server: https://kubernetes.default.svc
+     namespace: “ns-1“
+  clusterResourceWhitelist:
+   - group: “*”
+     kind: “*“
+  namespaceResourceWhitelist:
+   - group: “*”
+     kind: “*"

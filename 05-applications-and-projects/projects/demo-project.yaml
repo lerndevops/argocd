@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: teama
+  namespace: argocd
+spec:
+  description: Demo teama Project
+  sourceRepos:
+   - '*'
+  destinations:
+   - namespace: '*'
+     server: '*'
+  clusterResourceWhitelist:
+   - group: '*'
+     kind: '*'
+  namespaceResourceWhitelist:
+   - group: '*'
+     kind: '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: teamb
+  namespace: argocd
+spec:
+  description: Demo teamb Project
+  sourceRepos:
+   - '*'
+  destinations:
+   - namespace: '*'
+     server: '*'
+  clusterResourceWhitelist:
+   - group: '*'
+     kind: '*'
+  namespaceResourceWhitelist:
+   - group: '*'
+     kind: '*'

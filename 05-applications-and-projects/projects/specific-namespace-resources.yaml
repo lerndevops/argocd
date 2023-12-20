@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-4
+  namespace: argocd  
+spec:
+  description: project description
+  sourceRepos:
+    - “*”
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: “ns-1“
+  clusterResourceWhitelist:
+    - group: “”
+      kind: “Namespace“
+  namespaceResourceWhitelist: # Deny all namespaced-scoped resources from being created, except for Deployment
+    - group: “apps”
+      kind: “Deployment"

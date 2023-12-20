@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: specific-src-repo-prj
+  namespace: argocd
+spec:
+  description: project description
+  sourceRepos: # Only permit this Git repos
+   - “https://github.com/mabusaa/argocd-example-apps.git”
+  destinations:
+   - server: https://kubernetes.default.svc
+     namespace: “ns-1“
+  clusterResourceWhitelist:
+   - group: “*”
+     kind: “*“

@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: allow-only-ns-res-prj
+  namespace: argocd
+spec:
+  description: project description
+  sourceRepos:
+   - '*'
+  destinations:
+   - server: https://kubernetes.default.svc
+     namespace: "ns-1"
+  clusterResourceWhitelist: # Deny all cluster-scoped resources from being created, except for Namespace
+   - group: ""
+     kind: "Namespace"
