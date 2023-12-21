@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
   labels:
     app.kubernetes.io/name: root-app-helm
-  finalizers:
-   - resources-finalizer.argocd.argoproj.io
+  #finalizers:
+  # - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
