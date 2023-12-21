@@ -4,13 +4,13 @@ metadata:
   name: root-app-directory
   namespace: argocd
   labels:
-    app.kubernetes.io/name: root-app-helm
+    app.kubernetes.io/name: root-app-directory
   #finalizers:
   # - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    path: 07-app-of-apps
+    path: 07-app-of-apps/directory-of-apps
     repoURL: https://github.com/lerndevops/argocd.git
     targetRevision: main
   destination:
@@ -19,7 +19,7 @@ spec:
   syncPolicy:
     automated:
       allowEmpty: true
-      selfHeal: true
+      selfHeal: false
     syncOptions:
     - allowEmpty=true
     - CreateNamespace=true
