@@ -5,8 +5,9 @@ metadata:
   namespace: argocd
   labels:
     app.kubernetes.io/name: root-app-directory
-  #finalizers:
-  # - resources-finalizer.argocd.argoproj.io
+  finalizers:
+    #- resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io/background
 spec:
   project: default
   source:
@@ -28,6 +29,4 @@ spec:
      group: argoproj.io
      jsonPointers:
       - /status
-     
-
 
