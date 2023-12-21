@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    path: 07-app-of-apps/dirctory-of-apps
+    path: 07-app-of-apps
     repoURL: https://github.com/lerndevops/argocd.git
     targetRevision: main
   destination:
