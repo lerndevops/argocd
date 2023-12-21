@@ -1,0 +1,4 @@
+apiVersion: v2
+name: argocd-apps
+version: "1.0.0"
+descriptions: "the chart deploys multiple argo applications, which inturn will deploy the kubernetes applications as helmcharts/kustomization/jsonnet/directoryofapps"
